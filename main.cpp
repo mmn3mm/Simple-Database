@@ -94,7 +94,7 @@ public:
         file.getline(Brand,31,'#');
 
         file.read((char*)&Price,sizeof(Price));
-        file.seekg(length-file.tellg()+old,ios::cur);
+        file.seekg(length-file.tellg()+old,ios::cur); //So if there was a deleted record before it, it could pass all its length.
         return ;
 
     }
